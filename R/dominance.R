@@ -1,28 +1,28 @@
-dominance.eco<-function(x, first.col = 2, table = 1, graph = 1, pos_leg = 11){
-  z<-x[ ,first.col:ncol(x)]/apply(x[ ,first.col:ncol(x)],2,sum)*100
+Dominance<-function(x, first.col = 2, table = 1, graph = 1, pos_leg = 11){
   calDom<-function(x) table(cut(x,breaks=c(0,2,5,12,40,100), labels = c("Sr", "R", "Sd.", "D", "E")))
   tableA<-apply(x[-1],2,calDom)
   tableR<-apply(tableA,2,function(tableA) tableA/sum(tableA))
   tableR1<-round(tableR, digits = 2)
   maxA<-max(apply(tableA, 2, function(x) sum(x)))
 
+  textA<-"Absolute proportion of species richness for classes of dominance: "
+  textB<-"Relative proportion of species richness for classes of dominance: "
+
   if (table == 1){
-    print("Absolute proportion of species richness for classes of dominance")
+    cat(paste(textA, "\n\n"))
     print(tableA)
-    # print("Species richness for samples")
-    # print(tableS)
-    print(" ")
-    print("Relative proportion of species richness for classes of dominance")
-    print(tableR1)
+    cat("\n")
+    cat(paste(textB, "\n\n"))
+        print(tableR1)
   }
 
   if (table == 2){
-    print("Absolute proportion of species richness for classes of dominance")
+    cat(paste(textA, "\n\n"))
     print(tableA)
   }
 
   if (table == 3){
-    print("Relative proportion of species richness for classes of dominance")
+    cat(paste(textB, "\n\n"))
     print(tableR1)
   }
 
