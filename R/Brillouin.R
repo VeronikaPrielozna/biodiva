@@ -43,7 +43,7 @@ Brillouin<-function(x, first.col = 2, graph = T, colour="gray", note="BrillouinÂ
     maxB<-max(Hbmax)
 
     par(mfrow=c(1,1), mar=c(3.85,4,0.5,0.5))
-    barplot(HB, ylim = c(0, maxB + 1), col = colour, ylab=note)
+    barplot(HB, ylim = c(0, maxB + 1), col = colour, ylab=note, las = 2)
     posgr = barplot(HB, plot = F)
     points(posgr,Hbmax, pch = 20, cex = 1.5)
     text(posgr,Hbmax,lab=Hbmax,cex=0.9,pos=3)

@@ -23,14 +23,13 @@
 #' Whittaker R., 1977: Evolution of species diversity in land communities. Evolutionary Biology 10: 1–67.
 
 
-mm.eco<-function(x, first.col=2, table = 1, graph = 1){
+MM<-function(x, first.col=2, table = 1, graph = 1, colour="gray"){
   x<-x[,first.col:ncol(x)]
   S<-apply(x, 2, function(x1) sum(x1>0))
   N<-apply(x, 2, sum, na.rm = TRUE)
   tab<-rbind(S,N)
   tabS<-matrix(S, nrow = 1)
   tabN<-matrix(N, nrow = 1)
-
   tabDMg<-matrix()
   tabDMn<-matrix()
 
@@ -45,50 +44,50 @@ mm.eco<-function(x, first.col=2, table = 1, graph = 1){
   tabDMg<-tabDMg[,-1]
   tabDMn<-tabDMn[,-1]
 
-  DMg<-as.vector(tabDMg)
-  DMn<-as.vector(tabDMn)
+  DMg<-round(as.vector(tabDMg), digits = 2)
+  DMn<-round(as.vector(tabDMn), digits = 2)
 
-  DMg<-round(DMg, digits = 2)
-  DMn<-round(DMn, digits = 2)
+  tab_Mg_Mn<-rbind(DMg, DMn)
+  colnames(tab_Mg_Mn)<-colnames(tab)
 
-  tab1<-rbind(DMg, DMn)
-  colnames(tab1)<-colnames(tab)
+  maxMg<-max(tab_Mg_Mn[1,])
+  maxMn<-max(tab_Mg_Mn[2,])
 
-  maxMg<-max(tab1[1,])
-  maxMn<-max(tab1[2,])
+  textMg<-"Margalef´s index"
+  textMn<-"Menhinick´s index"
 
   if (table == 1){
-    print(tab1)
+    cat(paste(tab_Mg_Mn), "\n")
   }
 
   if (table == 2){
-    print("Margalef?s index")
-    print(tab1[1,])
+    cat(paste(textMg),"\n")
+    print(tab_Mg_Mn[1,])
   }
 
   if (table == 3){
-    print("Menhinick?s index")
-    print(tab1[2,])
+    cat(paste(textMn), "\n")
+    print(tab_Mg_Mn[2,])
   }
 
   if (graph == 1){
     par(mfrow=c(2,1), mar=c(3.8,4,2,1))
 
-    barplot(tab1[1,], ylim = c(0,maxMg + 1), las = 2, ylab = "Margalef?s index", font.main = 1, xaxt = "n",
-            col = "lightcyan3")
-    barplot(tab1[2,], ylim = c(0,maxMn + 1), las = 2, ylab = "Menhinick?s index", font.main = 1,
-            col = "lightcyan3")
+    barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), las = 2, ylab = textMg, font.main = 1, xaxt = "n",
+            col = colour)
+    barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), las = 2, ylab = textMn, font.main = 1,
+            col = colour)
   }
 
   if (graph == 2){
     par(mfrow=c(1,1), mar=c(3.8,4,4,1))
-    barplot(tab1[1,], ylim = c(0,maxMg + 1), las = 2, main = "Margalef?s index", cex.main=1.5, font.main = 1,
-            col = "lightcyan3")
+    barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), las = 2, main = textMg, cex.main=1.5, font.main = 1,
+            col = colour)
   }
 
   if (graph == 3){
     par(mfrow=c(1,1), mar=c(3.8,4,4,1))
-    barplot(tab1[2,], ylim = c(0,maxMn + 1), las = 2, main = "Menhinick?s index",cex.main=1.5, font.main = 1,
-            col = "lightcyan3")
+    barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), las = 2, main = textMn,cex.main=1.5, font.main = 1,
+            col = colour)
   }
 }
