@@ -23,7 +23,7 @@
 #' Whittaker R., 1977: Evolution of species diversity in land communities. Evolutionary Biology 10: 1–67.
 
 
-MM<-function(x, first.col=2, table = 1, graph = 1, colour="gray"){
+MM<-function(x, first.col=2, table = 1, graph = 1, col="gray"){
   x<-x[,first.col:ncol(x)]
   S<-apply(x, 2, function(x1) sum(x1>0))
   N<-apply(x, 2, sum, na.rm = TRUE)
@@ -74,20 +74,20 @@ MM<-function(x, first.col=2, table = 1, graph = 1, colour="gray"){
     par(mfrow=c(2,1), mar=c(3.8,4,2,1))
 
     barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), las = 2, ylab = textMg, font.main = 1, xaxt = "n",
-            col = colour)
+            col = col)
     barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), las = 2, ylab = textMn, font.main = 1,
-            col = colour)
+            col = col)
   }
 
   if (graph == 2){
     par(mfrow=c(1,1), mar=c(3.8,4,4,1))
     barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), las = 2, main = textMg, cex.main=1.5, font.main = 1,
-            col = colour)
+            col = col)
   }
 
   if (graph == 3){
     par(mfrow=c(1,1), mar=c(3.8,4,4,1))
     barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), las = 2, main = textMn,cex.main=1.5, font.main = 1,
-            col = colour)
+            col = col)
   }
 }

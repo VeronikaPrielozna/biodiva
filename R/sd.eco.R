@@ -69,3 +69,4 @@ sd.eco<-function(x, first.col = 2, table = 1, graph = 1, pos_leg = 8.5){
     text(posgr, TotalA, lab=TotalA, cex=0.9, pos=3)
   }
 }
+

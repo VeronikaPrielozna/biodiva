@@ -16,7 +16,7 @@
 #' Krebs C.J., 2014: Ecological Methodology. 3rd ed. (in prep).
 #' Pielou E.C., 1966: The measurement of diversity in different types of biological collections. Journal of Theoretical Biology 13: 131–144.
 
-Brillouin<-function(x, first.col = 2, graph = T, colour="gray", note="Brillouin´s index"){
+Brillouin<-function(x, first.col = 2, graph = T, col="gray", ylab="Brillouin´s index"){
   data<-x[,first.col:ncol(x)]
   tab<-data.frame(mat<-matrix(nrow = 3))
 
@@ -43,7 +43,7 @@ Brillouin<-function(x, first.col = 2, graph = T, colour="gray", note="Brillouin�
     maxB<-max(Hbmax)
 
     par(mfrow=c(1,1), mar=c(3.85,4,0.5,0.5))
-    barplot(HB, ylim = c(0, maxB + 1), col = colour, ylab=note, las = 2)
+    barplot(HB, ylim = c(0, maxB + 1), col = col, ylab=ylab, las = 2)
     posgr = barplot(HB, plot = F)
     points(posgr,Hbmax, pch = 20, cex = 1.5)
     text(posgr,Hbmax,lab=Hbmax,cex=0.9,pos=3)
