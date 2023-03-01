@@ -12,6 +12,8 @@ read.eco(first.col=2, na2null=T, attrib=T)
 \item{na2null}{converting NA values to null}
 
 \item{attrib}{creating attributes}
+
+\item{type}{nastení např. clipboard}
 }
 \description{
 Uploading the dataset, performing basic analyses for the loaded table, creating table attributes.
