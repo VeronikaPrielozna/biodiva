@@ -1,5 +1,6 @@
 soren.eco<-function(x, first.col=2, table=T, graph=T, txt=T, txs=1){
-  data.jac<-x[,first.col:ncol(x)]
+#notes Pavel
+    data.jac<-x[,first.col:ncol(x)]
   m1<-matrix(0,ncol(data.jac), ncol(data.jac))
   for (i in 1:(ncol(data.jac)-1)){
     x1<-data.jac[,i]
