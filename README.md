@@ -1,4 +1,24 @@
 # detectD
+Funkce, které jsou zatím hotové (potřeba zkontrolovat): 
+  * LoadData
+  * Brillouin
+  * Dominance
+  * MM
+  * Margalef
+  * Menhinick
+  * SN
+  * Richness
+  * Abundance
+  * Shannon
+  * Simpson
+  
+Co ještě není projeté: 
+  * broks.eco
+  * jac_ren.eco
+  * soren.eco
+
+
+## Název package:
 Community ecology estimates analysis (Cesta)\
 Basic ecology community analysis (Becca)\
 Ecology analysis (ecoanal)\
