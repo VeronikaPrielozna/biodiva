@@ -1,4 +1,6 @@
 # detectD
+
+las funguje jenom u Abundance
 vytvoření tabulek?
 https://cran.r-project.org/web/packages/reporter/vignettes/reporter-super.html 
 
