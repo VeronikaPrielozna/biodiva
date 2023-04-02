@@ -1,4 +1,7 @@
 # detectD
+vytvoření tabulek?
+https://cran.r-project.org/web/packages/reporter/vignettes/reporter-super.html 
+
 Funkce, které jsou zatím hotové (potřeba zkontrolovat): 
   * LoadData
   * Brillouin
