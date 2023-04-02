@@ -23,7 +23,7 @@
 #' Whittaker R., 1977: Evolution of species diversity in land communities. Evolutionary Biology 10: 1–67.
 
 
-MM<-function(x, first.col=2, table = 1, graph = 1, col="gray"){
+MM<-function(x, first.col=2, table = 1, graph = 1, col="gray", textMg = "Margalef´s index", textMn = "Menhinick´s index", font.main = 1, cex.main=1.5, ...){
   x<-x[,first.col:ncol(x)]
   S<-apply(x, 2, function(x1) sum(x1>0))
   N<-apply(x, 2, sum, na.rm = TRUE)
@@ -53,41 +53,41 @@ MM<-function(x, first.col=2, table = 1, graph = 1, col="gray"){
   maxMg<-max(tab_Mg_Mn[1,])
   maxMn<-max(tab_Mg_Mn[2,])
 
-  textMg<-"Margalef´s index"
-  textMn<-"Menhinick´s index"
 
-  if (table == 1){
-    cat(paste(tab_Mg_Mn), "\n")
-  }
-
-  if (table == 2){
-    cat(paste(textMg),"\n")
-    print(tab_Mg_Mn[1,])
-  }
-
-  if (table == 3){
-    cat(paste(textMn), "\n")
-    print(tab_Mg_Mn[2,])
-  }
 
   if (graph == 1){
-    par(mfrow=c(2,1), mar=c(3.8,4,2,1))
+    par(mfrow=c(2,1), mar=c(3.8,4,2,1), las = 2)
 
-    barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), las = 2, ylab = textMg, font.main = 1, xaxt = "n",
+    barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), ylab = textMg, font.main = font.main, xaxt = "n",
             col = col)
-    barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), las = 2, ylab = textMn, font.main = 1,
+    barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), ylab = textMn, font.main = font.main,
             col = col)
   }
 
   if (graph == 2){
-    par(mfrow=c(1,1), mar=c(3.8,4,4,1))
-    barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), las = 2, main = textMg, cex.main=1.5, font.main = 1,
+    par(mfrow=c(1,1), mar=c(3.8,4,4,1), las = 2)
+    barplot(tab_Mg_Mn[1,], ylim = c(0,maxMg + 1), main = textMg, cex.main = cex.main, font.main = font.main,
             col = col)
   }
 
   if (graph == 3){
-    par(mfrow=c(1,1), mar=c(3.8,4,4,1))
-    barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), las = 2, main = textMn,cex.main=1.5, font.main = 1,
+    par(mfrow=c(1,1), mar=c(3.8,4,4,1), las = 2)
+    barplot(tab_Mg_Mn[2,], ylim = c(0,maxMn + 1), main = textMn, cex.main = cex.main, font.main = font.main,
             col = col)
   }
+
+  if (table == 1){
+    return(tab_Mg_Mn)
+  }
+
+  if (table == 2){
+    cat(paste(textMg),"\n")
+    return(tab_Mg_Mn[1,])
+  }
+
+  if (table == 3){
+    cat(paste(textMn), "\n")
+    return(tab_Mg_Mn[2,])
+  }
 }
+

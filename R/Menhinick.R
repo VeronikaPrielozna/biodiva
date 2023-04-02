@@ -1,4 +1,4 @@
-Menhinick<-function(x, first.col=2, graph = T, col="gray"){
+Menhinick<-function(x, first.col=2, graph = T, col="gray", textMn = "Menhinick´s index", main = textMn, cex.main=1.5, font.main = 1, ...){
   x<-x[,first.col:ncol(x)]
   S<-apply(x, 2, function(x1) sum(x1>0))
   N<-apply(x, 2, sum, na.rm = TRUE)
@@ -15,11 +15,10 @@ Menhinick<-function(x, first.col=2, graph = T, col="gray"){
   DMn<-round(vec_DMn, digits = 2)
   names(DMn)<-colnames(tab)
   maxMn<-max(DMn)
-  textMn<-"Menhinick´s index"
 
   if (graph == T){
-    par(mfrow=c(1,1), mar=c(3.8,3,4,1))
-    barplot(DMn, ylim = c(0,maxMn + 1), las = 2, main = textMn,cex.main=1.5, font.main = 1,
+    par(mfrow=c(1,1), mar=c(3.8,3,4,1), las = 2)
+    barplot(DMn, ylim = c(0,maxMn + 1), main = main, cex.main = cex.main, font.main = font.main,
             col = col)
   }
 
