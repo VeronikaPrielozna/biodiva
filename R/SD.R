@@ -53,6 +53,7 @@ SD<-function(x, first.col = 2, table = 1, graph = 1, pos_leg = 8.5, SRtext = "Sp
     text(posgr, TotalA, lab=TotalA, cex=0.9, pos=3)
   }
 
+
   if (table == 1){
     SAtable<-list("Species richness" = table1, "Abundance" = table2)
     return(SAtable)
