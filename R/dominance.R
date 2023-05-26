@@ -1,10 +1,9 @@
-Dominance<-function(x, first.col = 2, table = 1, graph = 1, legl = 12,
+dominance<-function(x, first.col = 2, table = 1, graph = 1, legl = 12,
                     textA = "Absolute proportion of species richness for classes of dominance.",
                     textB = "Relative proportion of species richness for classes of dominance.",
-                    textA1 = "Total number of species",
                     textB1 = "Relative frequency",
                     col = c("gray0","gray48","gray78", "gray84", "gray90"), bty = "n", ...){
-  calDom<-function(x) table(cut(x,breaks=c(0,2,5,12,40,100), labels = c("Sr", "R", "Sd.", "D", "E")))
+  calDom<-function(x) table(cut(x,breaks=c(0,2,5,12,40,100), labels = c("Sr", "R", "Sd", "D", "E")))
   tableA<-apply(x[-1],2,calDom)
   tableR<-round(apply(tableA,2,function(tableA) tableA/sum(tableA)), digits = 2)
   maxA<-max(apply(tableA, 2, function(x) sum(x))) # max in tableA
@@ -36,7 +35,6 @@ Dominance<-function(x, first.col = 2, table = 1, graph = 1, legl = 12,
   if (table == 1){
     table1 <-list( "Absolute proportion" = tableA, "Relative proportion" = tableR)
     return(table1)
-
   }
 
   if (table == 2){
@@ -48,7 +46,4 @@ Dominance<-function(x, first.col = 2, table = 1, graph = 1, legl = 12,
     cat(paste(textB, "\n\n"))
     return(tableR)
   }
-
-
-
 }

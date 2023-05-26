@@ -13,7 +13,7 @@
 #'
 #' @details The function read.eco appeals to users to copy the dataset from the spreadsheet. With uploaded dataset is worked from the user's specified column (first.col=2). This function also automatically converts NA values to null (na2null=T) and writes out attributes of the dataset.
 
-LoadData<-function(file="clipboard",first.col=2, na2null=T, attrib=T) {
+loadData<-function(file="clipboard",first.col=2, na2null=T, attrib=T) {
   cat(paste("Copy data into cliboard."))
   invisible(readline(prompt="Press [enter] to continue. "))
   tryCatch(silent=T,

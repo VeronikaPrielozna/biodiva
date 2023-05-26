@@ -1,4 +1,4 @@
-Richness<-function(x, first.col = 2, graph = T, legh = 10, legl = 10, col = c("gray0", "gray48", "gray84"), ylab = "Number of species", ncol = 3, ...){
+richness<-function(x, first.col = 2, graph = T, legh = 10, legl = 10, col = c("gray0", "gray48", "gray84"), ylab = "Number of species", ncol = 3, ...){
   x<-x[,first.col:ncol(x)]
 
   F1<-apply(x, 2, function(f1) sum(f1==1))
@@ -12,7 +12,7 @@ Richness<-function(x, first.col = 2, graph = T, legh = 10, legl = 10, col = c("g
 
 
   if (graph == T){
-    par(mfrow=c(1,1), mar=c(4,3,3,0.5), las = 2)
+    par(mfrow=c(1,1), mar=c(4,4,2,0.5), las = 2)
     posgr = barplot(SRtab, plot = F)
     barplot(SRtab[-4,], ylim = c(0,maxS2 + 5), ylab = ylab,
             legend.text = c(as.expression(bquote('F'['1'])), as.expression(bquote('F'['2'])), "Other"), col=col,
