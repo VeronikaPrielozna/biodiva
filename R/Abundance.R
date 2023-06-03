@@ -11,9 +11,10 @@
 #' @param ylab The text for the y axis label. By default, the text is setted as ‘Abundance’.
 #' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
 #' @param col A vector that contains three components (named after the three colours). By default, the colours ‘gray0’, ‘gray48’ and ‘gray84’ is used.
-#' @param lncol Number of columns in the legend. By default, it is set to ‘3’.
+#' @param lncol The number of columns in the legend. By default, it is set to ‘3’.
+#' @param ...
 #'
-#' @return A data frame consisting of a column of calculated values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+#' @return A data frame consisting of a column of calculated abundance values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
 #' @examples
 #' For this function, you must have a uploaded data frame. Calculation of abundance for the ‘test_data’ data frame.
 #'
@@ -40,8 +41,8 @@ abundance <- function(df, first.col = 2, plot = T, legh = 50, legl = 10, ylab = 
     barplot(Atab[-4,], legend.text = c(as.expression(bquote('F'['1'])), as.expression(bquote('F'['2'])), "Other"),
             ylim = c(0, maxA2 * 1.2), col = col,
             args.legend = list(bty = "n", x = legl, y = maxA2 * 1.2 + legh, ncol = lncol), ...)
-    title(ylab = ylab, line = 2.5)
-
+    title(ylab = ylab, line = 3)
+    title(xlab = xlab, line = 4)
     text(posgr, TotalA, lab = TotalA, cex = 0.7, pos = 3)
   }
   return(Atab)
