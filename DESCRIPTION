@@ -1,17 +1,20 @@
 Package: biodiva
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.1
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Type: Package
+Title: Biological diversity analysis
+Version: 1.0
+Date: 2023-06-03
+Authors@R: Prieložná V., Drozd P. (<https://orcid.org/0000-0002-4602-8856>)
+Maintainer: Veronika Prieložná <verca.prielozna@gmail.com>
+Description: The ‘biodiva’ package calculates following parameters of taxocoenoses: i) species richness, species diversity (number of species, species richness indices, species diversity indices) and evenness (for specific diversity indices), ii) abundance and prediction of relative abundance, number of singletons and doubletons and dominance classification based on the Tischler's categories, iii) quantitative and qualitative similarity indices for group 
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
-URL: https://github.com/VeronikaPrielozna/detectD
-BugReports: https://github.com/VeronikaPrielozna/detectD/issues
 Depends: 
     R (>= 2.10)
 LazyData: true
+Suggests:
+  knitr
+URL: https://github.com/VeronikaPrielozna/biodiva
+BugReports: https://github.com/VeronikaPrielozna/biodiva/issues
+VignetteBuilder: knitr
+NeedsCompilation: no

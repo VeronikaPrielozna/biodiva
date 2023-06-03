@@ -1,5 +1,6 @@
 abundance<-function(x, first.col = 2, graph = T, legh = 50, legl = 10, ylab = "Abundance",
                     col = c("gray0", "gray48", "gray84"), ...){
+
   x<-x[,first.col:ncol(x)]
 
   TotalA<-apply(x, 2, function(f5) sum(f5))
