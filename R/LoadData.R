@@ -1,7 +1,7 @@
 #' loadData - Data uploading function
 #'
 #' @description The function allows for simple loading of user data, checking the basic parameters of the data and creating the object (data frame) attributes.
-#' @usage loadData()
+#' @usage loadData(file = "clipboard", first.col = 2, na2null = T, attrib = T)
 #'
 #' @param first.col Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.
 #' @param na2null Logical, true in case of converting NA values into null.
