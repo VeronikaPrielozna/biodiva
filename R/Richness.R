@@ -1,7 +1,7 @@
 #' richness - Species richness calculating function
 #'
 #' @description Calculates number of singletons and doubletons in the samples and total abundance of samples.
-#' @usage
+#' @usage richness(df, first.col = 2, graph = T, legh = 10, legl = 10, ylab = "Number of species", xlab = "Samples", col = c("gray0", "gray48", "gray84"), lncol = 3, ...)
 #'
 #' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
 #' @param first.col Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.
