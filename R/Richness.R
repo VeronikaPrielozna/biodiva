@@ -6,17 +6,18 @@
 #' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
 #' @param first.col Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.
 #' @param plot Should a barplot for results of calculations be plotted? By default, the plot is rendered.
-#' @param legh
-#' @param legl
+#' @param legh xxx
+#' @param legl xxx
 #' @param ylab The text for the y axis label. By default, the text is setted as ‘Number of species’.
 #' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
 #' @param col A vector that contains three components (named after the three colours). By default, the colours ‘gray0’, ‘gray48’ and ‘gray84’ is used.
 #' @param lncol The number of columns in the legend. By default, it is set to ‘3’.
-#' @param ...
+#' @param ... xxx
 #'
 #' @return A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
 #'
 #' @examples
+#' xx
 #' @export richness()
 
 richness<-function(df, first.col = 2, plot = T, legh = 10, legl = 10, ylab = "Number of species", xlab = "Samples",

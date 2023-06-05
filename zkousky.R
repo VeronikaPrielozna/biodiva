@@ -9,7 +9,8 @@ Ri<-richness(test_data.1, col = c("white", "darkgray", "darkcyan"), legh = 15, l
 
 Do <- dominance(test_data.1, table = "AR", plot = "A", legh = 50, legl = 13.5, col = c("white", "darkgray", "lightgreen", "darkcyan", "darkgreen"))
 Do <- dominance(test_data.1, table = "A", plot = "A", legh = 50, legl = 13.5, col = c("white", "darkgray", "lightgreen", "darkcyan", "darkgreen"))
-Do <- dominance(test_data.1, table = "R", plot = "R", legh = 0.3, legl = 13.5, col = c("white", "darkgray", "lightgreen", "darkcyan", "darkgreen"))
-Do[2]
+Do <- dominance(test_data.1, table = "R", plot = "R", ylab = "Relative frequency", legh = 0.3, legl = 15, col = c("white", "darkgray", "lightgreen", "darkcyan", "darkgreen"))
 
-apply(Do, 2, sum)
+M <- margalef(test_data.1, col = "darkcyan")
+M <- menhinick(test_data.1, col = "darkcyan")
+str(M)

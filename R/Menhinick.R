@@ -1,25 +1,46 @@
-Menhinick<-function(x, first.col=2, graph = T, col="gray", textMn = "Menhinick´s index", main = textMn, cex.main=1.5, font.main = 1, ...){
-  x<-x[,first.col:ncol(x)]
-  S<-apply(x, 2, function(x1) sum(x1>0))
-  N<-apply(x, 2, sum, na.rm = TRUE)
-  tab<-rbind(S,N)
-  tabS<-matrix(S, nrow = 1)
-  tabN<-matrix(N, nrow = 1)
-  vec_DMn<-c()
+#' menhinick - Margalef’s index calculating function
+#'
+#' @param df xxx
+#' @param first.col xxx
+#' @param plot xxx
+#' @param col xxx
+#' @param ylab xxx
+#' @param xlab xx
+#' @param ... xx
+#'
+#' @return xxx
+#' @export menhinick()
+#'
+#' @examples
+#' xxx
+
+menhinick <- function(df, first.col = 2, plot = T, col = "gray",
+                      ylab = "Menhinick´s index value", xlab = "Samples", ...){
+  x <- df[,first.col:ncol(df)]
+  S <- apply(x, 2, function(x1) sum(x1 > 0))
+  N <- apply(x, 2, sum, na.rm = TRUE)
+  tab <- rbind(S, N)
+  tabS <- matrix(S, nrow = 1)
+  tabN <- matrix(N, nrow = 1)
+  DMn_m <- matrix()
 
   for (i in 1:ncol(tab)){
-    DMn<-(tabS[,i])/sqrt(tabN[,i])
-    vec_DMn<-append(vec_DMn, DMn)
+    DMn <- (tabS[,i]) / sqrt(tabN[,i])
+    DMn_m <- rbind(DMn_m, DMn)
   }
 
-  DMn<-round(vec_DMn, digits = 2)
-  names(DMn)<-colnames(tab)
-  maxMn<-max(DMn)
+  DMn_m <- as.data.frame(DMn_m[2:nrow(DMn_m),1])
+  colnames(DMn_m) <- "D"
+  DMn_m <- round(DMn_m, digits = 2)
+  DMn <- DMn_m[,1,drop = F]
+  rownames(DMn) <- as.vector(colnames(tab))
+  maxMn <- max(DMn)
 
-  if (graph == T){
-    par(mfrow=c(1,1), mar=c(3.8,3,4,1), las = 2)
-    barplot(DMn, ylim = c(0,maxMn + 1), main = main, cex.main = cex.main, font.main = font.main,
-            col = col)
+  if (plot == T){
+    par(mfrow=c(1,1), mar=c(5, 4, 0.5, 0.5), las = 2)
+    barplot(as.table(t(DMn_m)), ylim = c(0, maxMn * 1.25), names.arg = rownames(DMn), col = col, xaxs = "r", ...)
+    title(ylab = ylab, line = 2.5)
+    title(xlab = xlab, line = 4)
   }
 
   return(DMn)

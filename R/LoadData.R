@@ -15,12 +15,12 @@
 #'
 #' @export loadData
 
-loadData <- function(file = "clipboard", first.col = 2, na2null = T, attrib = T) {
+loadData <- function(first.col = 2, na2null = T, attrib = T) {
   cat(paste("Copy data into cliboard."))
   invisible(readline(prompt = "Press [enter] to continue. "))
   tryCatch(silent = T,
            expr = {
-             x <- read.table(file, h = T, sep = "\t")
+             x <- read.table("clipboard", h = T, sep = "\t")
              message("Dataset successfully uploaded.")
            },
            error = function(e){

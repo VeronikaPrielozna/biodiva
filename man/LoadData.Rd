@@ -2,26 +2,26 @@
 % Please edit documentation in R/loadData.R
 \name{loadData}
 \alias{loadData}
-\title{read.eco - Uploading the dataset}
+\title{loadData - Data uploading function}
 \usage{
-read.eco(first.col=2, na2null=T, attrib=T)
+loadData(file = "clipboard", first.col = 2, na2null = T, attrib = T)
 }
 \arguments{
-\item{first.col}{the column from which to work with the data}
+\item{first.col}{Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.}
 
-\item{na2null}{converting NA values to null}
+\item{na2null}{Logical, true in case of converting NA values into null.}
 
-\item{attrib}{creating attributes}
-
-\item{type}{nastení např. clipboard}
+\item{attrib}{Logical, true in case of creating attributes.}
+}
+\value{
+A data frame uploaded by the user containing a list of taxa in the first column, and abundance or presence/absence data in following columns, with sample names in the column header.
 }
 \description{
-Uploading the dataset, performing basic analyses for the loaded table, creating table attributes.
-}
-\details{
-The function read.eco appeals to users to copy the dataset from the spreadsheet. With uploaded dataset is worked from the user's specified column (first.col=2). This function also automatically converts NA values to null (na2null=T) and writes out attributes of the dataset.
+The function allows for simple loading of user data, checking the basic parameters of the data and creating the object (data frame) attributes.
 }
 \examples{
-x<-read.eco()
+Uploading testing data.
+
+test_data <- loadData()
 
 }

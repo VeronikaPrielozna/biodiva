@@ -1,4 +1,5 @@
-Shannon<-function(x, first.col = 2, table = 1, graph = T, arrow = T, log_base = 1, ylab = "Shannon index", SC = "Table of Shannon calculations", SE = "Shannon evenness", ...){
+shannon <- function(x, first.col = 2, table = 1, graph = T, arrow = T,
+                    log_base = 1, ylab = "Shannon index", SC = "Table of Shannon calculations", SE = "Shannon evenness", ...){
   data.shan<-x[,first.col:ncol(x)]
   mat1<-matrix(nrow = 3)
   Htable<-data.frame(mat1)
