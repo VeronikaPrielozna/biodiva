@@ -14,3 +14,14 @@ Do <- dominance(test_data.1, table = "R", plot = "R", ylab = "Relative frequency
 M <- margalef(test_data.1, col = "darkcyan")
 M <- menhinick(test_data.1, col = "darkcyan")
 str(M)
+
+S <- shannon(test_data.1, col = "red")
+sim <- simpson(test_data.1)
+
+
+
+
+
+
+
+
