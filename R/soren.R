@@ -7,10 +7,11 @@
 #' @param cex Numeric. Size of the text in the plot cells.
 #'
 #' @return xxx
-#' @export soren()
-#'
 #' @examples
 #' soren(test_data)
+#'
+#' @export soren
+
 
 soren <- function(df, plot = T, cex = 0.75){
   data.jac <- df[,2:ncol(df)]

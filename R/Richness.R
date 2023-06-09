@@ -18,7 +18,7 @@
 #'
 #' @examples
 #' xx
-#' @export richness()
+#' @export richness
 
 richness<-function(df, first.col = 2, plot = T, legh = 10, legl = 10, ylab = "Number of species", xlab = "Samples",
                    col = c("gray0", "gray48", "gray84"), lncol = 3, ...){

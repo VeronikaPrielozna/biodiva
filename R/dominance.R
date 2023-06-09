@@ -21,7 +21,7 @@
 #' @examples
 #' xxx
 #'
-#' @export dominance()
+#' @export dominance
 
 dominance<-function(df, table = "AR", plot = "A", legh = 10, legl = 12,
                     ylab = "Absolutive frequency", xlab = "Samples",

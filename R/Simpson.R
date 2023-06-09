@@ -11,12 +11,12 @@
 #' @param ... xxx
 #'
 #' @return A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
-#' @export simpson()
 #'
 #' @examples
 #' # Popsat nastavení následujících argumentů¨
 #' přidat vice volání
 #' simpson(test_data, col = "darkcyan")
+#' @export simpson
 
 simpson <- function(df, first.col = 2, plot = T, ylab = "Simpson's index value", col = "gray",...){
   data.simps <- df[, first.col:ncol(df)]

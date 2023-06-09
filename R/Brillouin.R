@@ -10,13 +10,13 @@
 #' @param ... xxx
 #'
 #' @return A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
-
-#' @export brillouin()
 #'
 #' @examples
 #' Popsat nastavení následujících argumentů
 #' přidat vice volání
 #' brillouin(test_data.1, col = "darkcyan")
+#'
+#' @export brillouin
 
 brillouin <- function(df, first.col = 2, plot = T, ylab = "Brillouin's index", col = "gray",...){
   data <- df[, first.col : ncol(df)]

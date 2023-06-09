@@ -12,12 +12,12 @@
 #' @param ... xxx
 #'
 #' @return A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
-#' @export shannon()
 #'
 #' @examples
 #' # Popsat nastavení následujících argumentů¨
 #'
 #' shannon(test_data, log = "2", table = "C")
+#' @export shannon
 
 
 shannon <- function(df, first.col = 2, table = "CE", plot = T,
