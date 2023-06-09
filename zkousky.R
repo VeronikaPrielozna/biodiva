@@ -15,10 +15,11 @@ M <- margalef(test_data.1, col = "darkcyan")
 M <- menhinick(test_data.1, col = "darkcyan")
 str(M)
 
-S <- shannon(test_data.1, col = "red")
-sim <- simpson(test_data.1)
+S <- shannon(test_data.1, log = "2", table = "C")
 
+sim <- simpson(test_data.1, col = "darkcyan")
 
+Br <- brillouin(test_data.1, col = "darkcyan")
 
 
 
