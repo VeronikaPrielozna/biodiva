@@ -13,6 +13,7 @@
 #' @examples
 #' xxx
 #' @export menhinick
+#'
 
 menhinick <- function(df, first.col = 2, plot = T, col = "gray",
                       ylab = "Menhinick´s index value", xlab = "Samples", ...){

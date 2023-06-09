@@ -27,4 +27,18 @@ JR <- jacren(test_data.1)
 JR <- jacren(test_data.2)
 SO <- soren(test_data.2)
 
+data <- loadData()
+
+AB <- abundance(data, legh = 10, legl = 29)
+RI <- richness(data, legl = 29, legh = 3)
+DO <- dominance(data, legl = 31, legh = 8)
+MA <- margalef(data)
+ME <- menhinick(data)
+SA <- shannon(data)
+SI <- simpson(data)
+BR <- brillouin(data)
+JA <- jacren(data)
+SO <- soren(data)
+
+
 

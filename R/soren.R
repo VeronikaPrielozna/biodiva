@@ -11,6 +11,7 @@
 #' soren(test_data)
 #'
 #' @export soren
+#'
 
 
 soren <- function(df, plot = T, cex = 0.75){

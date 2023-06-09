@@ -21,6 +21,7 @@
 #' Abundance_table <- abundance(test_data, legh = 150, legl = 12, col = c("white", "darkgray", "darkcyan"), ncol = 3)
 #'
 #' @export abundance
+#'
 
 abundance <- function(df, first.col = 2, plot = T, legh = 50, legl = 10, ylab = "Abundance", xlab = "Samples",
                     col = c("gray0", "gray48", "gray84"), lncol = 3, ...){

@@ -12,6 +12,7 @@
 #' jacren(test_data)
 #'
 #' @export jacren
+#'
 
 jacren <- function(df, plot = T, cex = 0.75){
   data.jac <- df[,2 : ncol(df)]

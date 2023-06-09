@@ -37,5 +37,4 @@ margalef - Menhinick's index calculating function
 }
 \examples{
 xxx
-
 }

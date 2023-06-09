@@ -29,4 +29,5 @@ Calculation of Brillouin index and evenness
 Popsat nastavení následujících argumentů
 přidat vice volání
 brillouin(test_data.1, col = "darkcyan")
+
 }

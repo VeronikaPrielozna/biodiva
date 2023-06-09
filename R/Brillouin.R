@@ -17,6 +17,7 @@
 #' brillouin(test_data.1, col = "darkcyan")
 #'
 #' @export brillouin
+#'
 
 brillouin <- function(df, first.col = 2, plot = T, ylab = "Brillouin's index", col = "gray",...){
   data <- df[, first.col : ncol(df)]

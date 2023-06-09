@@ -14,6 +14,7 @@
 #' test_data <- loadData()
 #'
 #' @export loadData
+#'
 
 loadData <- function(first.col = 2, na2null = T, attrib = T) {
   cat(paste("Copy data into cliboard."))

@@ -29,4 +29,5 @@ Calculation of Simpson’s index and evenness
 # Popsat nastavení následujících argumentů¨
 přidat vice volání
 simpson(test_data, col = "darkcyan")
+
 }

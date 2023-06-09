@@ -13,6 +13,7 @@
 #' @examples
 #' xxx
 #' @export margalef
+#'
 
 margalef <- function(df, first.col = 2, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...){
   x <- df[, first.col:ncol(df)]

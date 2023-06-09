@@ -21,4 +21,5 @@ Calculation of Jaccard and Renconen similarity index
 }
 \examples{
 jacren(test_data)
+
 }

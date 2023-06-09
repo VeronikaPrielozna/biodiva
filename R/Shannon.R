@@ -17,7 +17,9 @@
 #' # Popsat nastavení následujících argumentů¨
 #'
 #' shannon(test_data, log = "2", table = "C")
+#'
 #' @export shannon
+#'
 
 
 shannon <- function(df, first.col = 2, table = "CE", plot = T,

@@ -33,4 +33,5 @@ Calculation of Shannon index and evenness
 # Popsat nastavení následujících argumentů¨
 
 shannon(test_data, log = "2", table = "C")
+
 }
