@@ -1,6 +1,7 @@
 library(readxl)
 test_data <- read_excel("data-raw/test_data.xlsx")
 test_data.1<-loadData()
+test_data.2<-loadData()
 attributes(test_data.1)
 
 Ab<-abundance(test_data.1, col = c("white", "darkgray", "darkcyan"),legh = 150, legl = 12, ncol = 3)
@@ -22,7 +23,8 @@ sim <- simpson(test_data.1, col = "darkcyan")
 Br <- brillouin(test_data.1, col = "darkcyan")
 
 
-
-
+JR <- jacren(test_data.1)
+JR <- jacren(test_data.2)
+SO <- soren(test_data.2)
 
 

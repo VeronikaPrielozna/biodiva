@@ -14,7 +14,7 @@
 #' @export brillouin()
 #'
 #' @examples
-#' Popsat nastavení následujících argumentů¨
+#' Popsat nastavení následujících argumentů
 #' přidat vice volání
 #' brillouin(test_data.1, col = "darkcyan")
 
