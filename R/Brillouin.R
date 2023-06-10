@@ -37,7 +37,7 @@ brillouin <- function(df, first.col = 2, plot = T, ylab = "Brillouin's index", c
   }
   tab <- tab[, -1]
   colnames(tab) <- colnames(data)
-  rownames(tab) <- c("HB", "Hbmax", "Even")
+  rownames(tab) <- c("HB", "HBmax", "Even")
   tab <- round(tab, digits = 2)
 
   if (plot == T){
@@ -51,5 +51,6 @@ brillouin <- function(df, first.col = 2, plot = T, ylab = "Brillouin's index", c
     points(posgr, Hbmax, pch = 20, cex = 1)
     text(posgr, Hbmax, lab = Hbmax, cex = 0.7, pos = 3)
   }
+  tab <- as.data.frame(t(tab))
   return(tab)
 }

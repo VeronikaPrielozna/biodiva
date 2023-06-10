@@ -23,7 +23,7 @@
 #' @export abundance
 #'
 
-abundance <- function(df, first.col = 2, plot = T, legh = 50, legl = 10, ylab = "Abundance", xlab = "Samples",
+abundance <- function(df, first.col = 2, plot = T, legh = 0, legl = 0, ylab = "Abundance", xlab = "Samples",
                     col = c("gray0", "gray48", "gray84"), lncol = 3, ...){
 
   x <- df[,first.col:ncol(df)]
@@ -41,10 +41,11 @@ abundance <- function(df, first.col = 2, plot = T, legh = 50, legl = 10, ylab = 
     posgr = barplot(Atab, plot = F)
     barplot(Atab[-4,], legend.text = c(as.expression(bquote('F'['1'])), as.expression(bquote('F'['2'])), "Other"),
             ylim = c(0, maxA2 * 1.2), col = col,
-            args.legend = list(bty = "n", x = legl, y = maxA2 * 1.2 + legh, ncol = lncol), ...)
+            args.legend = list(bty = "n", x = legl, y = legh, ncol = lncol), ...)
     title(ylab = ylab, line = 3)
     title(xlab = xlab, line = 4)
     text(posgr, TotalA, lab = TotalA, cex = 0.7, pos = 3)
   }
+  Atab <- as.data.frame(t(Atab))
   return(Atab)
 }

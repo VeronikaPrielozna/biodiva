@@ -83,15 +83,17 @@ shannon <- function(df, first.col = 2, table = "CE", plot = T,
   }
 
   if (table == "CE"){
-    HEtable <- list( "Shannon calculations" = Htable, "Shannon evenness" = Etable)
+    HEtable <- list( "Shannon calculations" = as.data.frame(t(Htable)), "Shannon evenness" = as.data.frame(t(Etable)))
     return(HEtable)
   }
 
   if(table == "C"){
+    Htable <- as.data.frame(t(Htable))
     return(Htable)
   }
 
   if(table == "E"){
+    Etable <- as.data.frame(t(Etable))
     return(Etable)
   }
 }

@@ -29,16 +29,18 @@ SO <- soren(test_data.2)
 
 data <- loadData()
 
-AB <- abundance(data, legh = 10, legl = 29)
-RI <- richness(data, legl = 29, legh = 3)
-DO <- dominance(data, legl = 31, legh = 8)
+AB <- abundance(data, legh = 850, legl = 12)
+RI <- richness(data, legl = 12, legh = 140)
+DO <- dominance(data, legl = 12, legh = 120)
+DO <- dominance(data, table = "A", legl = 12, legh = 120)
 MA <- margalef(data)
 ME <- menhinick(data)
-SA <- shannon(data)
+SA <- shannon(data, table = "E")
 SI <- simpson(data)
 BR <- brillouin(data)
 JA <- jacren(data)
 SO <- soren(data)
 
+str(JA)
 
 

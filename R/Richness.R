@@ -21,7 +21,7 @@
 #' @export richness
 #'
 
-richness<-function(df, first.col = 2, plot = T, legh = 10, legl = 10, ylab = "Number of species", xlab = "Samples",
+richness<-function(df, first.col = 2, plot = T, legh = 0, legl = 0, ylab = "Number of species", xlab = "Samples",
                    col = c("gray0", "gray48", "gray84"), lncol = 3, ...){
 
   x <- df[,first.col:ncol(df)]
@@ -38,11 +38,12 @@ richness<-function(df, first.col = 2, plot = T, legh = 10, legl = 10, ylab = "Nu
     posgr = barplot(SRtab, plot = F)
     barplot(SRtab[-4,], ylim = c(0,maxS2 * 1.2), xaxs = "r",
             legend.text = c(as.expression(bquote('F'['1'])), as.expression(bquote('F'['2'])),"Other"), col = col,
-            args.legend = list(bty = "n", x = legl, y = maxS2 * 1.2 + legh, ncol = lncol), ...)
+            args.legend = list(bty = "n", x = legl, y = legh, ncol = lncol), ...)
     title(ylab = ylab, line = 3)
     title(xlab = xlab, line = 4)
     text(posgr, Total, lab = Total, cex = 0.7, pos = 3)
   }
+  SRtab <- as.data.frame(t(SRtab))
   return(SRtab)
 }
 

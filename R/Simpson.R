@@ -47,5 +47,6 @@ simpson <- function(df, first.col = 2, plot = T, ylab = "Simpson's index value",
     Dc1 <- round(Dc, digits = 2)
     text(posgr, Dc1, lab = Dc1, cex = 0.65, pos = 3)
   }
+  tab <- as.data.frame(t(tab))
   return(tab)
 }
