@@ -15,8 +15,8 @@
 #' @export margalef
 #'
 
-margalef <- function(df, first.col = 2, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...){
-  x <- df[, first.col:ncol(df)]
+margalef <- function(x, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...){
+  x <- x[,(attributes(x)$"First column"):ncol(x)]
   S <- apply(x, 2, function(x1) sum(x1 > 0))
   N <- apply(x, 2, sum, na.rm = TRUE)
   tab <- rbind(S, N)
@@ -35,10 +35,13 @@ margalef <- function(df, first.col = 2, plot = T, ylab = "Margalef's index value
   DMg <- DMg_m[,1,drop = F]
   rownames(DMg) <- as.vector(colnames(tab))
   maxMg <- max(DMg)
-
+  print(DMg)
+  DMg_m_posgr <- as.table(t(DMg_m))
     if (plot == T){
     par(mfrow = c(1,1), mar = c(5, 4, 0.5, 0.5), las = 2)
-    barplot(as.table(t(DMg_m)), ylim = c(0, maxMg * 1.25), names.arg = rownames(DMg), col = col, xaxs = "r", ...)
+    posgr <- barplot(DMg_m_posgr, plot = F)
+    barplot(DMg_m_posgr, ylim = c(0, maxMg * 1.25), names.arg = rownames(DMg), col = col, xaxs = "r", ...)
+    text(posgr, DMg_m_posgr, lab = DMg_m_posgr, cex = 0.65, adj = c(-0.2,0.3), srt = 90)
     title(ylab = ylab, line = 3)
     title(xlab = xlab, line = 4)
   }

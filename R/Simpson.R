@@ -20,8 +20,8 @@
 #' @export simpson
 #'
 
-simpson <- function(df, first.col = 2, plot = T, ylab = "Simpson's index value", col = "gray",...){
-  data.simps <- df[, first.col:ncol(df)]
+simpson <- function(x, first.col = 2, plot = T, ylab = "Simpson's index value", xlab = "Samples", col = "gray",...){
+  data.simps <- x[,(attributes(x)$"First column"):ncol(x)]
   mat <- matrix(nrow = 4, ncol = ncol(data.simps))
   tab <- data.frame(mat)
   D <- apply(data.simps, 2, function(x) sum((x / sum(x)) ^ 2))
@@ -44,8 +44,9 @@ simpson <- function(df, first.col = 2, plot = T, ylab = "Simpson's index value",
     posgr <- barplot(Dc, plot = F)
     barplot(Dc, ylim = c(0, maxD * 1.2), col = col, ...)
     title(ylab = ylab, line = 3)
+    title(xlab = xlab, line = 4)
     Dc1 <- round(Dc, digits = 2)
-    text(posgr, Dc1, lab = Dc1, cex = 0.65, pos = 3)
+    text(posgr, Dc1, lab = Dc1, cex = 0.65, adj = c(-0.2,0.3), srt = 90)
   }
   tab <- as.data.frame(t(tab))
   return(tab)

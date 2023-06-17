@@ -36,6 +36,7 @@ loadData <- function(first.col = 2, na2null = T, attrib = T) {
              attr(x, "Spec_col") <- first.col:ncol(x)
              attr(x, "Number of species") <- nrow(x)
              attr(x, "Number of samples") <- ncol(x)-1
+             attr(x, "First column") <- first.col
              y <- unlist(lapply(as.list(first.col:ncol(x)), function(x1) is.numeric((x[,x1]))))
              if(all(y, na.rm = TRUE) == F){
                colbad <- which(y == FALSE) + first.col-1

@@ -22,9 +22,9 @@
 #'
 
 
-shannon <- function(df, first.col = 2, table = "CE", plot = T,
-                    log = "e", ylab = "Shannon index value", col = "black", ...){
-  data.shan <- df[, first.col : ncol(df)]
+shannon <- function(x, first.col = 2, table = "CE", plot = T,
+                    log = "e", ylab = "Shannon index value", xlab = "Samples" ,col = "black", ...){
+  data.shan <- x[,(attributes(x)$"First column"):ncol(x)]
   mat1 <- matrix(nrow = 3)
   Htable <- data.frame(mat1)
   mat2 <- matrix(nrow = 2)
@@ -71,6 +71,7 @@ shannon <- function(df, first.col = 2, table = "CE", plot = T,
     plot(NULL,ylim = c(minH, maxH * 1.1),xlim = c(1,ncol(data.shan)), xlab = "", xaxt = "n",
          ylab = "",...)
     title(ylab = ylab, line = 2.5)
+    title(xlab = xlab, line = 4)
     points(c(1:ncol(Htable)), Htable[1,], pch = 16, col = col)
 
     table1 <- as.matrix(Htable[2,])

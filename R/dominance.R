@@ -6,8 +6,8 @@
 #' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
 #' @param table xxx
 #' @param plot xxx
-#' @param legh xxx
-#' @param legl xxx
+#' @param legver xxx
+#' @param leghor xxx
 #' @param ylabA xxx
 #' @param ylabR xx
 #' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
@@ -24,10 +24,10 @@
 #' @export dominance
 #'
 
-dominance<-function(df, table = "AR", plot = "A", legh = 10, legl = 12,
+dominance<-function(x, table = "AR", plot = "A", legver = 1, leghor = 1,
                     ylab = "Absolutive frequency", xlab = "Samples",
                     col = c("gray0","gray48","gray78", "gray84", "gray90"), lncol = 6, bty = "n", ...){
-  x <- df
+
   calDom <- function(x) table(cut(x, breaks = c(0, 2, 5, 12, 40, 100),
                                   labels = c("Sr", "R", "Sd", "D", "E")))
   tableA <- apply(x[-1], 2, calDom)
@@ -36,16 +36,18 @@ dominance<-function(df, table = "AR", plot = "A", legh = 10, legl = 12,
 
   if (plot == "A"){
     par(mfrow = c(1, 1), mar = c(5, 4, 2, 0.5), las = 2)
+    posgr = barplot(tableA, plot = F)
     barplot(tableA, ylim = c(0, maxA * 1.2), legend = T,
-            args.legend = list(x = legl, y = legh, bty = bty, ncol = lncol), col = col, ...)
+            args.legend = list(x = posgr[leghor], y = legver, bty = bty, ncol = lncol, xjust = 0), col = col, ...)
     title(ylab = ylab, line = 3)
     title(xlab = xlab, line = 4)
   }
 
   if (plot == "R"){
     par(mfrow = c(1, 1), mar = c(5, 4, 2, 0.5), las = 2)
+    posgr = barplot(tableR, plot = F)
     barplot(tableR, ylim = c(0, 1), legend = T,
-            args.legend = list(x = legl, y = legh, bty = bty, ncol = 1, ncol = lncol),
+            args.legend = list(x = posgr[leghor], y = legver, bty = bty, ncol = lncol, xjust = 0),
             col = col, ...)
     title(ylab = ylab, line = 3)
     title(xlab = xlab, line = 4)
