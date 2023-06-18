@@ -1,13 +1,13 @@
-#' loadData - Data uploading function
+#' loadData - Data uploading
 #'
 #' @description The function allows for simple loading of user data, checking the basic parameters of the data and creating the object (data frame) attributes.
 #' @usage loadData(file = "clipboard", first.col = 2, na2null = T, attrib = T)
 #'
-#' @param first.col Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.
-#' @param na2null Logical, true in case of converting NA values into null.
-#' @param attrib Logical, true in case of creating attributes.
+#' @param first.col Numeric (integer), the first column of samples (to identify non-relevant columns). By default, this parameter is set to ‘2’ (typically, the species names are usually found in the first column of the table). The following functions in this package work with data from this column.
+#' @param na2null Logical, TRUE in case of converting NA values into null.
+#' @param attrib Logical, TRUE in case of including attributes (‘names’, ‘class’, ‘row.names’, ‘Spec_col’, ‘Number of species’, ‘Number of samples’, ‘First column’) .
 #'
-#' @returns A data frame uploaded by the user containing a list of taxa in the first column, and abundance or presence/absence data in following columns, with sample names in the column header.
+#' @returns A data frame uploaded by the user containing a list of taxa in the first column, and abundance data in following columns, with sample names in the column header.
 #' @examples
 #' Uploading testing data.
 #'

@@ -28,6 +28,7 @@ dominance<-function(x, table = "AR", plot = "A", legver = 1, leghor = 1,
                     ylab = "Absolutive frequency", xlab = "Samples",
                     col = c("gray0","gray48","gray78", "gray84", "gray90"), lncol = 6, bty = "n", ...){
 
+  x <- x[,(attributes(x)$"First column"):ncol(x)]
   calDom <- function(x) table(cut(x, breaks = c(0, 2, 5, 12, 40, 100),
                                   labels = c("Sr", "R", "Sd", "D", "E")))
   tableA <- apply(x[-1], 2, calDom)

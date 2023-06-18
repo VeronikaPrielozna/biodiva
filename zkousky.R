@@ -39,10 +39,10 @@ ME <- menhinick(data)
 SA <- shannon(data, table = "E")
 SI <- simpson(data)
 BR <- brillouin(data)
-JA <- jacren(data)
+JA <- jacren(data, cex = 0.7)
 SO <- soren(data)
 
-attributes(data)$"First column"
+attributes(data)
 
 
 
@@ -50,6 +50,6 @@ attributes(data)$"First column"
 
 
 
-
+data[,1:11]
 
 
