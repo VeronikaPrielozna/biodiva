@@ -1,7 +1,7 @@
 # biodiva
 Biological diversity analysis
 
-# README in the process
+# README and finishing of functions in the process
 
 ### Introduction
 
