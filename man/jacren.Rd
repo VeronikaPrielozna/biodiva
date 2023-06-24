@@ -2,7 +2,7 @@
 % Please edit documentation in R/jacren.R
 \name{jacren}
 \alias{jacren}
-\title{jacren - Jaccard and Renkonen similarity index}
+\title{Jaccard and Renkonen similarity index}
 \usage{
 jacren(x, plot = T, cex = 0.4)
 }

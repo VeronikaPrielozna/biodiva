@@ -1,4 +1,4 @@
-#' menhinick - Menhinick's index
+#' Menhinick's index
 #'
 #' @description Calculates Menhinick’s index and displays the results of the calculation in graphical and tabular form.
 #' @usage menhinick(x, plot = T, col = "gray", ylab = "Menhinick´s index", xlab = "Samples", ...)

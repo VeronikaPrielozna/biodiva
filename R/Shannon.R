@@ -1,4 +1,4 @@
-#' shannon - Shannon index and evenness
+#' Shannon index and evenness
 #'
 #' @description Calculates Shannon index and evenness and displays the results of the calculation in graphical and tabular form.
 #' @usage shannon(x, table = "CE", plot = T,  log = "e", ylab = "Shannon index value", xlab = "Samples", col = "black", ...)

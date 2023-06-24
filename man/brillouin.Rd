@@ -2,7 +2,7 @@
 % Please edit documentation in R/brillouin.R
 \name{brillouin}
 \alias{brillouin}
-\title{brillouin - Brillouin index and evenness}
+\title{Brillouin index and evenness}
 \usage{
 brillouin(x, plot = T, ylab = "Brillouin's index", xlab = "Samples", col = "black",...)
 }

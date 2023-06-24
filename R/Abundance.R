@@ -1,4 +1,4 @@
-#' abundance - Abundance
+#' Abundance
 #'
 #' @description Calculates the number of singletons and doubletons in the samples and the total abundance of the samples and displays the results of the calculation in graphical and tabular form.
 #' @usage abundance(x, plot = T, lehver = 50, leghor = 10 , ylab = "Abundance", xlab = "Samples", col = c("gray0", "gray48", "gray84"), ncol = 3, ...)

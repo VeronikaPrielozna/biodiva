@@ -2,7 +2,7 @@
 % Please edit documentation in R/shannon.R
 \name{shannon}
 \alias{shannon}
-\title{shannon - Shannon index and evenness}
+\title{Shannon index and evenness}
 \usage{
 shannon(x, table = "CE", plot = T,  log = "e", ylab = "Shannon index value", xlab = "Samples", col = "black", ...)
 }

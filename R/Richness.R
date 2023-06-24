@@ -1,4 +1,4 @@
-#' richness - Species richness
+#' Species richness
 #'
 #' @description Calculates the species richness of the samples and displays the results of the calculation in graphical and tabular form.
 #' @usage richness(x, plot = T, lehver = 10, leghor = 10, ylab = "Number of species", xlab = "Samples", col = c("gray0", "gray48", "gray84"), lncol = 3, ...)

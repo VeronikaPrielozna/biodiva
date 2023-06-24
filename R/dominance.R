@@ -1,4 +1,4 @@
-#' dominance - Dominance classes analysis
+#' Dominance classes analysis
 #'
 #' @description Calculates Tischler's dominance class analyses and displays the results of the calculation in graphical and tabular form.
 #' @usage dominance(x, table = "AR", plot = "A", lehver = 10, leghor = 12, ylab = "Absolutive frequency", xlab = "Samples", col = c("gray0","gray48","gray78", "gray84", "gray90"), lncol = 6, bty = "n", ...)

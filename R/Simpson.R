@@ -1,4 +1,4 @@
-#' simpson - Simpson’s index and evenness
+#' Simpson’s index and evenness
 #'
 #' @description Calculates Simpson’s index and evenness and displays the results of the calculation in graphical and tabular form.
 #' @usage simpson(x, plot = T, ylab = "Simpson's index value", xlab = "Samples", col = "gray",...)

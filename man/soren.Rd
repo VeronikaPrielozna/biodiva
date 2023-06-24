@@ -2,7 +2,7 @@
 % Please edit documentation in R/soren.R
 \name{soren}
 \alias{soren}
-\title{soren - Sørensen and Bray-Curtis similarity index}
+\title{Sørensen and Bray-Curtis similarity index}
 \usage{
 soren(x, plot = T, cex = 0.4)
 }

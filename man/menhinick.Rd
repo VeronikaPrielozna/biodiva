@@ -2,7 +2,7 @@
 % Please edit documentation in R/menhinick.R
 \name{menhinick}
 \alias{menhinick}
-\title{menhinick - Menhinick's index}
+\title{Menhinick's index}
 \usage{
 menhinick(x, plot = T, col = "gray", ylab = "Menhinick´s index", xlab = "Samples", ...)
 }

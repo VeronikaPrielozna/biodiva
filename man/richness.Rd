@@ -2,7 +2,7 @@
 % Please edit documentation in R/richness.R
 \name{richness}
 \alias{richness}
-\title{richness - Species richness}
+\title{Species richness}
 \usage{
 richness(x, plot = T, lehver = 10, leghor = 10, ylab = "Number of species", xlab = "Samples", col = c("gray0", "gray48", "gray84"), lncol = 3, ...)
 }

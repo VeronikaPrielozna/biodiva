@@ -1,4 +1,4 @@
-#' loadData - Data uploading
+#' Data uploading
 #'
 #' @description The function allows for simple loading of user data, checking the basic parameters of the data and creating the object (data frame) attributes.
 #' @usage loadData(file = "clipboard", first.col = 2, na2null = T, attrib = T)

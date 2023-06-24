@@ -2,7 +2,7 @@
 % Please edit documentation in R/simpson.R
 \name{simpson}
 \alias{simpson}
-\title{simpson - Simpson’s index and evenness}
+\title{Simpson’s index and evenness}
 \usage{
 simpson(x, plot = T, ylab = "Simpson's index value", xlab = "Samples", col = "gray",...)
 }

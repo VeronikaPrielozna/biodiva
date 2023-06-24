@@ -1,4 +1,4 @@
-#' jacren - Jaccard and Renkonen similarity index
+#' Jaccard and Renkonen similarity index
 #'
 #' @description Calculates Jaccard and Renkonen similarity index and displays the results of the calculation in graphical and tabular form.
 #' @usage jacren(x, plot = T, cex = 0.4)

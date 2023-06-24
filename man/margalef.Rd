@@ -2,7 +2,7 @@
 % Please edit documentation in R/margalef.R
 \name{margalef}
 \alias{margalef}
-\title{margalef - Margalef’s index}
+\title{Margalef’s index}
 \usage{
 margalef(x, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...)
 }

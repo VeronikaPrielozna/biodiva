@@ -2,7 +2,7 @@
 % Please edit documentation in R/loadData.R
 \name{loadData}
 \alias{loadData}
-\title{loadData - Data uploading}
+\title{Data uploading}
 \usage{
 loadData(file = "clipboard", first.col = 2, na2null = T, attrib = T)
 }

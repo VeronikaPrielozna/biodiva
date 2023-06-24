@@ -2,7 +2,7 @@
 % Please edit documentation in R/dominance.R
 \name{dominance}
 \alias{dominance}
-\title{dominance - Dominance classes analysis}
+\title{Dominance classes analysis}
 \usage{
 dominance(x, table = "AR", plot = "A", lehver = 10, leghor = 12, ylab = "Absolutive frequency", xlab = "Samples", col = c("gray0","gray48","gray78", "gray84", "gray90"), lncol = 6, bty = "n", ...)
 }

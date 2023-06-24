@@ -1,4 +1,4 @@
-#' brillouin - Brillouin index and evenness
+#' Brillouin index and evenness
 #'
 #' @description Calculates Brillouin index and evenness and displays the results of the calculation in graphical and tabular form.
 #' @usage brillouin(x, plot = T, ylab = "Brillouin's index", xlab = "Samples", col = "black",...)

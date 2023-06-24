@@ -1,4 +1,4 @@
-#' margalef - Margalef’s index
+#' Margalef’s index
 #'
 #' @description Calculates Margalef’s index and displays the results of the calculation in graphical and tabular form.
 #' @usage margalef(x, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...)

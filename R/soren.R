@@ -1,4 +1,4 @@
-#' soren - Sørensen and Bray-Curtis similarity index
+#' Sørensen and Bray-Curtis similarity index
 #'
 #' @description Calculates Sørensen and Bray-Curtis similarity index and displays the results of the calculation in graphical and tabular form.
 #' @usage soren(x, plot = T, cex = 0.4)

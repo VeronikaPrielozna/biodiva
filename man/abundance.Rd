@@ -2,7 +2,7 @@
 % Please edit documentation in R/abundance.R
 \name{abundance}
 \alias{abundance}
-\title{abundance - Abundance}
+\title{Abundance}
 \usage{
 abundance(x, plot = T, lehver = 50, leghor = 10 , ylab = "Abundance", xlab = "Samples", col = c("gray0", "gray48", "gray84"), ncol = 3, ...)
 }
