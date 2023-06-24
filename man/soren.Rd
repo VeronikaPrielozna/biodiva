@@ -2,24 +2,26 @@
 % Please edit documentation in R/soren.R
 \name{soren}
 \alias{soren}
-\title{soren - Sørensen and Bray-Curtis similarity index calculating function}
+\title{soren - Sørensen and Bray-Curtis similarity index}
 \usage{
-soren(df, first.col = 2, plot = T, cex = 0.75)
+soren(x, plot = T, cex = 0.4)
 }
 \arguments{
-\item{df}{A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
 \item{plot}{Should a plot for results of calculations be plotted? By default, the plot is rendered.}
 
-\item{cex}{Numeric. Size of the text in the plot cells.}
+\item{cex}{Numeric. Size of the text in the plot cells. By default, it is set to 0.4.}
 }
 \value{
-xxx
+Numerical. The column and row headers contain the sample names, the cells contain the calculated index values.
 }
 \description{
-Calculation and graphical display of the results of the Sørensen and Bray-Curtis index. similarity index
+Calculates Sørensen and Bray-Curtis similarity index and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-soren(test_data)
+# Calculation of the Sørensen and Bray-Curtis similarity index for the 'test_data' and plotted results.  The tabular output is stored in an object called 'soren_tab'.
+
+soren_tab <- soren(test_data)
 
 }

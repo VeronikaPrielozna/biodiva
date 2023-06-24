@@ -2,20 +2,18 @@
 % Please edit documentation in R/abundance.R
 \name{abundance}
 \alias{abundance}
-\title{abundance - Abundance calculating function}
+\title{abundance - Abundance}
 \usage{
-abundance(df, first.col = 2, plot = T, legh = 50, legl = 10, ylab = "Abundance", xlab = "Samples", col = c("gray0", "gray48", "gray84"), ncol = 3, ...)
+abundance(x, plot = T, lehver = 50, leghor = 10 , ylab = "Abundance", xlab = "Samples", col = c("gray0", "gray48", "gray84"), ncol = 3, ...)
 }
 \arguments{
-\item{df}{A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).}
-
-\item{first.col}{Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
 \item{plot}{Should a barplot for results of calculations be plotted? By default, the plot is rendered.}
 
-\item{legh}{xx}
+\item{legver}{Numeric. Setting the vertical position of the legend.}
 
-\item{legl}{xx}
+\item{leghor}{Numeric. Setting the horizontal position of the legend.}
 
 \item{ylab}{The text for the y axis label. By default, the text is setted as ‘Abundance’.}
 
@@ -25,17 +23,17 @@ abundance(df, first.col = 2, plot = T, legh = 50, legl = 10, ylab = "Abundance",
 
 \item{lncol}{The number of columns in the legend. By default, it is set to ‘3’.}
 
-\item{...}{xx}
+\item{...}{Arguments to be passed to methods, such graphical parameters. Many methods will acccept the following arguments.}
 }
 \value{
-A data frame consisting of a column of calculated abundance values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+A data frame consisting of a column of calculated abundance values (‘F1’ – abundance of singletons, ‘F2’ – abundance od doubletons, ‘Other’, ‘Total’) with samples in the rows.
 }
 \description{
-Calculates number of singletons and doubletons in the samples and total abundance of samples.
+Calculates the number of singletons and doubletons in the samples and the total abundance of the samples and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-For this function, you must have a uploaded data frame. Calculation of abundance for the ‘test_data’ data frame.
+# Calculation of the abundance for the 'test_data' with the position of the legend vertical set to '150' and the position of the legend length set to '12'. The number of columns in the legend is set to '3' and the colour palette used is 'white', 'darkgray' and 'darkcyan'. The data frame containing the calculation results is stored in an object called 'abundance_tab'.
 
-Abundance_table <- abundance(test_data, legh = 150, legl = 12, col = c("white", "darkgray", "darkcyan"), ncol = 3)
+abundance_tab <- abundance(test_data, lehver = 150, leghor = 12, lncol = 3, col = c("white", "darkgray", "darkcyan"))
 
 }

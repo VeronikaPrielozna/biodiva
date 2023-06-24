@@ -2,39 +2,32 @@
 % Please edit documentation in R/margalef.R
 \name{margalef}
 \alias{margalef}
-\title{margalef - Menhinick's index calculating function}
+\title{margalef - Margalef’s index}
 \usage{
-margalef(
-  df,
-  first.col = 2,
-  plot = T,
-  ylab = "Margalef's index value",
-  xlab = "Samples",
-  col = "gray",
-  ...
-)
+margalef(x, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...)
 }
 \arguments{
-\item{df}{xxx}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
-\item{first.col}{xxx}
+\item{plot}{Should a barplot for results of calculations be plotted? By default, the plot is rendered.}
 
-\item{plot}{xxx}
+\item{ylab}{The text for the y axis label in plot. By default, the text is setted as ‘Margalef's index value’.}
 
-\item{ylab}{xxx}
+\item{xlab}{The text for the x axis label. By default, the text is setted as ‘Samples’.}
 
-\item{xlab}{xxx}
+\item{col}{The colour used in the plot. By default, it is set as ‘gray’.}
 
-\item{col}{xxx}
-
-\item{...}{xxx}
+\item{...}{Arguments to be passed to methods, such graphical parameters. Many methods will acccept the following arguments.}
 }
 \value{
-xxx
+A data frame consisting of a column of calculated Margalef’s index (‘D’) with samples in the rows.
 }
 \description{
-margalef - Menhinick's index calculating function
+Calculates Margalef’s index and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-xxx
+# Calculation of the Margalef’s index for the 'test_data' and plotted results. The colour used is 'darkcyan'. The data frame of calculation results is stored in an object called 'margalef_tab'.
+
+margalef_tab <- margalef(test_data, col = "darkcyan")
+
 }

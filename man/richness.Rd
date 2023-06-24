@@ -2,20 +2,18 @@
 % Please edit documentation in R/richness.R
 \name{richness}
 \alias{richness}
-\title{richness - Species richness calculating function}
+\title{richness - Species richness}
 \usage{
-richness(df, first.col = 2, graph = T, legh = 10, legl = 10, ylab = "Number of species", xlab = "Samples", col = c("gray0", "gray48", "gray84"), lncol = 3, ...)
+richness(x, plot = T, lehver = 10, leghor = 10, ylab = "Number of species", xlab = "Samples", col = c("gray0", "gray48", "gray84"), lncol = 3, ...)
 }
 \arguments{
-\item{df}{A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).}
-
-\item{first.col}{Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
 \item{plot}{Should a barplot for results of calculations be plotted? By default, the plot is rendered.}
 
-\item{legh}{xxx}
+\item{legver}{Numeric. Setting the vertical position of the legend.}
 
-\item{legl}{xxx}
+\item{leghor}{Numeric. Setting the horizontal position of the legend.}
 
 \item{ylab}{The text for the y axis label. By default, the text is setted as ‘Number of species’.}
 
@@ -25,14 +23,17 @@ richness(df, first.col = 2, graph = T, legh = 10, legl = 10, ylab = "Number of s
 
 \item{lncol}{The number of columns in the legend. By default, it is set to ‘3’.}
 
-\item{...}{xxx}
+\item{...}{Arguments to be passed to methods, such grapfical parameters. Many methods will acccept the following arguments.}
 }
 \value{
-A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+A data frame consisting of a column of calculated species richness values (‘F1’ – the number of species of singletons, ‘F2’ – the number of species of doubletons, ‘Other’, ‘Total’) with samples in the rows.
 }
 \description{
-Calculates number of singletons and doubletons in the samples and total abundance of samples.
+Calculates the species richness of the samples and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-xx
+# Calculation of the species richness for the 'test_data' with the position of the legend vertical set to '15' and the position of the legend length set to '13'. The colour palette used is 'white', 'darkgray' and 'darkcyan'. The data frame containing the calculation results is stored in an object called 'richness_tab'.
+
+richness_tab <- richness(test_data, lehver = 15, leghor = 13, col = c("white", "darkgray", "darkcyan"))
+
 }

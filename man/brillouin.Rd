@@ -2,32 +2,32 @@
 % Please edit documentation in R/brillouin.R
 \name{brillouin}
 \alias{brillouin}
-\title{brillouin - Brillouin index and evenness calculating function}
+\title{brillouin - Brillouin index and evenness}
 \usage{
-rillouin(df, first.col = 2, plot = T, ylab = "Brillouin's index", col = "gray",...)
+brillouin(x, plot = T, ylab = "Brillouin's index", xlab = "Samples", col = "black",...)
 }
 \arguments{
-\item{df}{A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).}
-
-\item{first.col}{Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
 \item{plot}{Should a barplot for results of calculations be plotted? By default, the plot is rendered.}
 
 \item{ylab}{The text for the y axis label in plot. By default, the text is setted as ‘Brillouin's index’.}
 
-\item{col}{A vector that contains five components (named after the five colours). By default, the color is set as ‘gray’.}
+\item{xlab}{The text for the x axis label. By default, the text is setted as ‘Samples’.}
 
-\item{...}{xxx}
+\item{col}{The colour used in the plot. By default, it is set as ‘gray’.}
+
+\item{...}{Arguments to be passed to methods, such grapfical parameters. Many methods will acccept the following arguments.}
 }
 \value{
-A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+A data frame consisting of a column of calculated Brillouin calculations (‘HB’, ‘HBmax’, ‘Even’) with samples in the rows.
 }
 \description{
-Calculation of Brillouin index and evenness
+Calculates Brillouin index and evenness and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-Popsat nastavení následujících argumentů
-přidat vice volání
-brillouin(test_data.1, col = "darkcyan")
+# Calculation of the Brillouin calculations for the 'test_data' and plotted results. The colour used is 'darkcyan'. Data frame of the results is stored in an object called 'brillouin_tab'.
+
+brillouin_tab <- brillouin(test_data, col = "darkcyan")
 
 }

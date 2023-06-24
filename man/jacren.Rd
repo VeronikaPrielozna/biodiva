@@ -2,24 +2,26 @@
 % Please edit documentation in R/jacren.R
 \name{jacren}
 \alias{jacren}
-\title{jacren - Jaccard and Renconen similarity index calculating function}
+\title{jacren - Jaccard and Renkonen similarity index}
 \usage{
-jacren(df, plot = T, cex = 0.75)
+jacren(x, plot = T, cex = 0.4)
 }
 \arguments{
-\item{df}{A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
 \item{plot}{Should a plot for results of calculations be plotted? By default, the plot is rendered.}
 
-\item{cex}{Numeric. Size of the text in the plot cells.}
+\item{cex}{Numeric. Size of the text in the plot cells. By default, it is set to 0.4.}
 }
 \value{
-xxx
+Numerical. The column and row headers contain the sample names, the cells contain the calculated index values.
 }
 \description{
-Calculation of Jaccard and Renconen similarity index
+Calculates Jaccard and Renkonen similarity index and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-jacren(test_data)
+# Calculation of the Jaccard and Renconen similarity index for the 'test_data' and plotted results.  The tabular output is stored in an object called 'jacren_tab'.
+
+jacren_tab <- jacren(test_data)
 
 }

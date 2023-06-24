@@ -2,39 +2,32 @@
 % Please edit documentation in R/menhinick.R
 \name{menhinick}
 \alias{menhinick}
-\title{menhinick - Margalef’s index calculating function}
+\title{menhinick - Menhinick's index}
 \usage{
-menhinick(
-  df,
-  first.col = 2,
-  plot = T,
-  col = "gray",
-  ylab = "Menhinick´s index value",
-  xlab = "Samples",
-  ...
-)
+menhinick(x, plot = T, col = "gray", ylab = "Menhinick´s index", xlab = "Samples", ...)
 }
 \arguments{
-\item{df}{xxx}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
-\item{first.col}{xxx}
+\item{plot}{Should a barplot for results of calculations be plotted? By default, the plot is rendered.}
 
-\item{plot}{xxx}
+\item{col}{The colour used in the plot. By default, it is set as ‘gray’.}
 
-\item{col}{xxx}
+\item{ylab}{The text for the y axis label in plot. By default, the text is setted as ‘Menhinick´s index value.}
 
-\item{ylab}{xxx}
+\item{xlab}{The text for the x axis label. By default, the text is setted as ‘Samples’.}
 
-\item{xlab}{xx}
-
-\item{...}{xx}
+\item{...}{Arguments to be passed to methods, such graphical parameters. Many methods will acccept the following arguments.}
 }
 \value{
-xxx
+A data frame consisting of a column of calculated Menhinick’s index (‘D’) with samples in the rows.
 }
 \description{
-menhinick - Margalef’s index calculating function
+Calculates Menhinick’s index and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-xxx
+# Calculation of the Menhinick’s index for the 'test_data' and plotted results. The colour used is 'darkcyan'. The data frame of calculation results is stored in an object called 'menhinick_tab'.
+
+menhinick_tab <- menhinick(test_data.1, col = "darkcyan")
+
 }

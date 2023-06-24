@@ -2,32 +2,32 @@
 % Please edit documentation in R/simpson.R
 \name{simpson}
 \alias{simpson}
-\title{simpson - Simpson's index calculating function}
+\title{simpson - Simpson’s index and evenness}
 \usage{
-simpson(df, first.col = 2, table = T, plot = T, ylab = "Simpson's index value", col = "gray",...)
+simpson(x, plot = T, ylab = "Simpson's index value", xlab = "Samples", col = "gray",...)
 }
 \arguments{
-\item{df}{A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).}
+\item{x}{A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).}
 
-\item{first.col}{first.col     Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.}
-
-\item{plot}{Should a plot for results of calculations be plotted? By default, the plot is rendered.}
+\item{plot}{Should a barplot for results of calculations be plotted? By default, the plot is rendered.}
 
 \item{ylab}{The text for the y axis label in plot. By default, the text is setted as ‘Simpson´s index value’.}
 
-\item{col}{A vector that contains five components (named after the five colours). By default, the color is set as ‘gray’.}
+\item{xlab}{The text for the x axis label. By default, the text is setted as ‘Samples’.}
 
-\item{...}{xxx}
+\item{col}{The colour used in the plot. By default, it is set as ‘gray’.}
+
+\item{...}{Arguments to be passed to methods, such grapfical parameters. Many methods will acccept the following arguments.}
 }
 \value{
-A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+A data frame consisting of a column of calculated Simpson’s calculations ans evenness (‘D´’, ‘Dc’, ‘Dr’, ‘Even’) with samples in the rows.
 }
 \description{
-Calculation of Simpson’s index and evenness
+Calculates Simpson’s index and evenness and displays the results of the calculation in graphical and tabular form.
 }
 \examples{
-# Popsat nastavení následujících argumentů¨
-přidat vice volání
-simpson(test_data, col = "darkcyan")
+# Calculation of the Simpson’s calculations for the 'test_data' and plotted results. The colour used is 'darkcyan'. Data frame of the results is stored in an object called 'simpson_tab'.
+
+simpson_tab <- simpson(test_data, col = "darkcyan")
 
 }
