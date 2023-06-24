@@ -1,28 +1,27 @@
-#' shannon - Shannon index and evenness calculating function
+#' shannon - Shannon index and evenness
 #'
-#' @description Calculation of Shannon index and evenness
-#' @usage shannon(df, first.col = 2, table = "CE", plot = T,  log = "e", ylab = "Shannon index value", col = "black", ...)
-#' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
-#' @param first.col Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.
+#' @description Calculates Shannon index and evenness and displays the results of the calculation in graphical and tabular form.
+#' @usage shannon(x, table = "CE", plot = T,  log = "e", ylab = "Shannon index value", xlab = "Samples", col = "black", ...)
+#'
+#' @param x A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).
 #' @param table Table output type. In case the table is equal to ‘C’ the table will be created only for Shannon calculations (Shannon index, the lower limit of Shannon index and the highest limit of Shannon index), for table equal to ‘E’ the output will be the table for evenness of Shannon index. In the case of table equal to ‘CE’ a sheet of two table type elements will be created for both Shannon calculations and evenness.
 #' @param plot Should a plot for results of calculations be plotted? By default, the plot is rendered.
 #' @param log Logarithm base type. The possibilities are ‘e’, for a base equal to Euler's number and ‘2’, for a base equal to two.
 #' @param ylab The text for the y axis label in plot. By default, the text is setted as ‘Shannon index value’.
-#' @param col A vector that contains five components (named after the five colours). By default, the color is set as ‘gray’.
-#' @param ... xxx
+#' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
+#' @param col The colour used in the plot. By default, it is set as ‘gray’.
+#' @param ... Arguments to be passed to methods, such graphical parameters. Many methods will acccept the following arguments.
 #'
-#' @return A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+#' @return A data frame consisting of a column of calculated Shannon calculations (‘H´’, ‘Hmin’, ‘Hmax’) and evenness (‘Even1’, ‘Even2’) with samples in the rows.
 #'
 #' @examples
-#' # Popsat nastavení následujících argumentů¨
+#' # Calculation of the Shannon calculations for the 'test_data' and plotted results. The base of the logaritm is set to 2'. Data frame of the results is stored in an object called 'shannon_tab'.
 #'
-#' shannon(test_data, log = "2", table = "C")
+#' shannon_tab <- shannon(test_data, log = "2", table = "C")
 #'
 #' @export shannon
-#'
 
-
-shannon <- function(x, first.col = 2, table = "CE", plot = T,
+shannon <- function(x, table = "CE", plot = T,
                     log = "e", ylab = "Shannon index value", xlab = "Samples" ,col = "black", ...){
   data.shan <- x[,(attributes(x)$"First column"):ncol(x)]
   mat1 <- matrix(nrow = 3)

@@ -1,25 +1,25 @@
-#' brillouin - Brillouin index and evenness calculating function
+#' brillouin - Brillouin index and evenness
 #'
-#' @description Calculation of Brillouin index and evenness
-#' @usage rillouin(df, first.col = 2, plot = T, ylab = "Brillouin's index", col = "gray",...)
-#' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
-#' @param first.col Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.
+#' @description Calculates Brillouin index and evenness and displays the results of the calculation in graphical and tabular form.
+#' @usage brillouin(x, plot = T, ylab = "Brillouin's index", xlab = "Samples", col = "black",...)
+#'
+#' @param x A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).
 #' @param plot Should a barplot for results of calculations be plotted? By default, the plot is rendered.
 #' @param ylab The text for the y axis label in plot. By default, the text is setted as ‘Brillouin's index’.
-#' @param col A vector that contains five components (named after the five colours). By default, the color is set as ‘gray’.
-#' @param ... xxx
+#' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
+#' @param col The colour used in the plot. By default, it is set as ‘gray’.
+#' @param ... Arguments to be passed to methods, such grapfical parameters. Many methods will acccept the following arguments.
 #'
-#' @return A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+#' @return A data frame consisting of a column of calculated Brillouin calculations (‘HB’, ‘HBmax’, ‘Even’) with samples in the rows.
 #'
 #' @examples
-#' Popsat nastavení následujících argumentů
-#' přidat vice volání
-#' brillouin(test_data.1, col = "darkcyan")
+#' # Calculation of the Brillouin calculations for the 'test_data' and plotted results. The colour used is 'darkcyan'. Data frame of the results is stored in an object called 'brillouin_tab'.
+#'
+#' brillouin_tab <- brillouin(test_data, col = "darkcyan")
 #'
 #' @export brillouin
-#'
 
-brillouin <- function(x, first.col = 2, plot = T, ylab = "Brillouin's index", xlab = "Samples", col = "black",...){
+brillouin <- function(x, plot = T, ylab = "Brillouin's index", xlab = "Samples", col = "black",...){
   data <- x[,(attributes(x)$"First column"):ncol(x)]
   tab <- data.frame(mat <- matrix(nrow = 3))
 

@@ -1,18 +1,19 @@
-#' soren - Sørensen and Bray-Curtis similarity index calculating function
+#' soren - Sørensen and Bray-Curtis similarity index
 #'
-#' @description Calculation and graphical display of the results of the Sørensen and Bray-Curtis index. similarity index
-#' @usage soren(df, first.col = 2, plot = T, cex = 0.75)
-#' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
+#' @description Calculates Sørensen and Bray-Curtis similarity index and displays the results of the calculation in graphical and tabular form.
+#' @usage soren(x, plot = T, cex = 0.4)
+#'
+#' @param x A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).
 #' @param plot Should a plot for results of calculations be plotted? By default, the plot is rendered.
-#' @param cex Numeric. Size of the text in the plot cells.
+#' @param cex Numeric. Size of the text in the plot cells. By default, it is set to 0.4.
 #'
-#' @return xxx
+#' @return Numerical. The column and row headers contain the sample names, the cells contain the calculated index values.
 #' @examples
-#' soren(test_data)
+#' # Calculation of the Sørensen and Bray-Curtis similarity index for the 'test_data' and plotted results.  The tabular output is stored in an object called 'soren_tab'.
+#'
+#' soren_tab <- soren(test_data)
 #'
 #' @export soren
-#'
-
 
 soren <- function(x, plot = T, cex = 0.4){
   data.jac <- x[, attributes(x)$"First column" : ncol(x)]

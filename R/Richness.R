@@ -1,25 +1,26 @@
-#' richness - Species richness calculating function
+#' richness - Species richness
 #'
-#' @description Calculates number of singletons and doubletons in the samples and total abundance of samples.
-#' @usage richness(df, first.col = 2, graph = T, legver = 10, leghor = 10, ylab = "Number of species", xlab = "Samples", col = c("gray0", "gray48", "gray84"), lncol = 3, ...)
+#' @description Calculates the species richness of the samples and displays the results of the calculation in graphical and tabular form.
+#' @usage richness(x, plot = T, lehver = 10, leghor = 10, ylab = "Number of species", xlab = "Samples", col = c("gray0", "gray48", "gray84"), lncol = 3, ...)
 #'
-#' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
-#' @param first.col Numeric (integer), the first column of samples (to skip non-relevant columns). By default, this parameter is set to ‘2’.
+#' @param x A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).
 #' @param plot Should a barplot for results of calculations be plotted? By default, the plot is rendered.
-#' @param legver xxx
-#' @param leghor xxx
+#' @param legver Numeric. Setting the vertical position of the legend.
+#' @param leghor Numeric. Setting the horizontal position of the legend.
 #' @param ylab The text for the y axis label. By default, the text is setted as ‘Number of species’.
 #' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
 #' @param col A vector that contains three components (named after the three colours). By default, the colours ‘gray0’, ‘gray48’ and ‘gray84’ is used.
 #' @param lncol The number of columns in the legend. By default, it is set to ‘3’.
-#' @param ... xxx
+#' @param ... Arguments to be passed to methods, such grapfical parameters. Many methods will acccept the following arguments.
 #'
-#' @return A data frame consisting of a column of calculated species richness values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+#' @return A data frame consisting of a column of calculated species richness values (‘F1’ – the number of species of singletons, ‘F2’ – the number of species of doubletons, ‘Other’, ‘Total’) with samples in the rows.
 #'
 #' @examples
-#' xx
-#' @export richness
+#' # Calculation of the species richness for the 'test_data' with the position of the legend vertical set to '15' and the position of the legend length set to '13'. The colour palette used is 'white', 'darkgray' and 'darkcyan'. The data frame containing the calculation results is stored in an object called 'richness_tab'.
 #'
+#' richness_tab <- richness(test_data, lehver = 15, leghor = 13, col = c("white", "darkgray", "darkcyan"))
+#'
+#' @export richness
 
 richness<-function(x, plot = T, legver = 1, leghor = 1, ylab = "Number of species", xlab = "Samples",
                    col = c("gray0", "gray48", "gray84"), lncol = 3, ...){

@@ -1,18 +1,20 @@
-#' jacren - Jaccard and Renconen similarity index calculating function
+#' jacren - Jaccard and Renkonen similarity index
 #'
-#' @description Calculation of Jaccard and Renconen similarity index
-#' @usage jacren(df, plot = T, cex = 0.75)
-#' @param df A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
+#' @description Calculates Jaccard and Renkonen similarity index and displays the results of the calculation in graphical and tabular form.
+#' @usage jacren(x, plot = T, cex = 0.4)
+#'
+#' @param x A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).
 #' @param plot Should a plot for results of calculations be plotted? By default, the plot is rendered.
-#' @param cex Numeric. Size of the text in the plot cells.
+#' @param cex Numeric. Size of the text in the plot cells. By default, it is set to 0.4.
 #'
-#' @return xxx
+#' @return Numerical. The column and row headers contain the sample names, the cells contain the calculated index values.
 #'
 #' @examples
-#' jacren(test_data)
+#' # Calculation of the Jaccard and Renconen similarity index for the 'test_data' and plotted results.  The tabular output is stored in an object called 'jacren_tab'.
+#'
+#' jacren_tab <- jacren(test_data)
 #'
 #' @export jacren
-#'
 
 jacren <- function(x, plot = T, cex = 0.4){
   data.jac <- x[, attributes(x)$"First column" : ncol(x)]

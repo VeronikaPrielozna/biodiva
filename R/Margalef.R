@@ -1,19 +1,23 @@
-#' margalef - Menhinick's index calculating function
+#' margalef - Margalef’s index
 #'
-#' @param df xxx
-#' @param first.col xxx
-#' @param plot xxx
-#' @param ylab xxx
-#' @param xlab xxx
-#' @param col xxx
-#' @param ... xxx
+#' @description Calculates Margalef’s index and displays the results of the calculation in graphical and tabular form.
+#' @usage margalef(x, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...)
 #'
-#' @return xxx
+#' @param x A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).
+#' @param plot Should a barplot for results of calculations be plotted? By default, the plot is rendered.
+#' @param ylab The text for the y axis label in plot. By default, the text is setted as ‘Margalef's index value’.
+#' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
+#' @param col The colour used in the plot. By default, it is set as ‘gray’.
+#' @param ... Arguments to be passed to methods, such graphical parameters. Many methods will acccept the following arguments.
+#'
+#' @return A data frame consisting of a column of calculated Margalef’s index (‘D’) with samples in the rows.
 #'
 #' @examples
-#' xxx
-#' @export margalef
+#' # Calculation of the Margalef’s index for the 'test_data' and plotted results. The colour used is 'darkcyan'. The data frame of calculation results is stored in an object called 'margalef_tab'.
 #'
+#' margalef_tab <- margalef(test_data, col = "darkcyan")
+#'
+#' @export margalef
 
 margalef <- function(x, plot = T, ylab = "Margalef's index value", xlab = "Samples", col = "gray", ...){
   x <- x[,(attributes(x)$"First column"):ncol(x)]

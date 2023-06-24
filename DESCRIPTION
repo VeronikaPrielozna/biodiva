@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2023-06-03
 Author: Prieložná V., Drozd P. (<https://orcid.org/0000-0002-4602-8856>)
 Maintainer: Veronika Prieložná <verca.prielozna@gmail.com>
-Description: The ‘biodiva’ package calculates following parameters of taxocoenoses: i) species richness, species diversity (number of species, species richness indices, species diversity indices) and evenness (for specific diversity indices), ii) abundance and prediction of relative abundance, number of singletons and doubletons and dominance classification based on the Tischler's categories, iii) quantitative and qualitative similarity indices for group 
+Description: The ‘biodiva’ package calculates following parameters of taxocoenoses: i) species richness, species diversity (number of species, species richness indices, species diversity indices) and evenness (for specific diversity indices), ii) abundance and prediction of relative abundance, number of singletons and doubletons and dominance classification based on the Tischler's categories, iii) quantitative and qualitative similarity indices for group of samples . Unlike other packages, this one provides preset graphical outputs that can be further modified.
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1

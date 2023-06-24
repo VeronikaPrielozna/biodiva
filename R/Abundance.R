@@ -1,26 +1,25 @@
-#' abundance - Abundance calculating function
+#' abundance - Abundance
 #'
-#' @description Calculates number of singletons and doubletons in the samples and total abundance of samples.
-#' @usage abundance(df, first.col = 2, plot = T, legver = 50, leghor = 10, ylab = "Abundance", xlab = "Samples", col = c("gray0", "gray48", "gray84"), ncol = 3, ...)
+#' @description Calculates the number of singletons and doubletons in the samples and the total abundance of the samples and displays the results of the calculation in graphical and tabular form.
+#' @usage abundance(x, plot = T, lehver = 50, leghor = 10 , ylab = "Abundance", xlab = "Samples", col = c("gray0", "gray48", "gray84"), ncol = 3, ...)
 #'
-#' @param x A data frame containing uploaded user dataset (list of taxa in first column, followed by columns of abundances with sample names in a header).
+#' @param x A data frame uploaded by the loadData function (important because of the first column setting) containing the uploaded user dataset (list of taxa in the first column, followed by abundance columns with sample names in a header).
 #' @param plot Should a barplot for results of calculations be plotted? By default, the plot is rendered.
-#' @param legver xx
-#' @param leghor xx
+#' @param legver Numeric. Setting the vertical position of the legend.
+#' @param leghor Numeric. Setting the horizontal position of the legend.
 #' @param ylab The text for the y axis label. By default, the text is setted as ‘Abundance’.
 #' @param xlab The text for the x axis label. By default, the text is setted as ‘Samples’.
 #' @param col A vector that contains three components (named after the three colours). By default, the colours ‘gray0’, ‘gray48’ and ‘gray84’ is used.
 #' @param lncol The number of columns in the legend. By default, it is set to ‘3’.
-#' @param ... xx
+#' @param ... Arguments to be passed to methods, such graphical parameters. Many methods will acccept the following arguments.
 #'
-#' @return A data frame consisting of a column of calculated abundance values (‘F1’, ‘F2’, ‘Other’, ‘Total’) with samples in the rows.
+#' @return A data frame consisting of a column of calculated abundance values (‘F1’ – abundance of singletons, ‘F2’ – abundance od doubletons, ‘Other’, ‘Total’) with samples in the rows.
 #' @examples
-#' For this function, you must have a uploaded data frame. Calculation of abundance for the ‘test_data’ data frame.
+#' # Calculation of the abundance for the 'test_data' with the position of the legend vertical set to '150' and the position of the legend length set to '12'. The number of columns in the legend is set to '3' and the colour palette used is 'white', 'darkgray' and 'darkcyan'. The data frame containing the calculation results is stored in an object called 'abundance_tab'.
 #'
-#' Abundance_table <- abundance(test_data, legver = 150, leghor = 12, col = c("white", "darkgray", "darkcyan"), ncol = 3)
+#' abundance_tab <- abundance(test_data, lehver = 150, leghor = 12, lncol = 3, col = c("white", "darkgray", "darkcyan"))
 #'
 #' @export abundance
-#'
 
 abundance <- function(x, plot = T, legver = 1, leghor = 1, ylab = "Abundance", xlab = "Samples",
                     col = c("gray0", "gray48", "gray84"), lncol = 3, ...){
